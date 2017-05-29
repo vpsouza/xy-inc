@@ -18,19 +18,21 @@ module.exports = (function () {
 		});
 	});
 
+	server.opts(/.*/, function (req,res,next) {
+		res.header("Access-Control-Allow-Origin", "*");
+		res.header("Access-Control-Allow-Methods", req.header("Access-Control-Request-Method"));
+		res.header("Access-Control-Allow-Headers", req.header("Access-Control-Request-Headers"));
+		res.send(200);
+		return next();
+	});
+
 	restify.CORS.ALLOW_HEADERS.push('accept');
 	restify.CORS.ALLOW_HEADERS.push('sid');
 	restify.CORS.ALLOW_HEADERS.push('lang');
 	restify.CORS.ALLOW_HEADERS.push('origin');
 	restify.CORS.ALLOW_HEADERS.push('withcredentials');
 	restify.CORS.ALLOW_HEADERS.push('x-requested-with');
-
-	server.use(restify.CORS({
-		origins: ['*'],
-		credentials: true, // defaults to false
-		headers: ['x-foo'], // sets expose-headers
-		methods: ['GET', 'PUT', 'DELETE', 'POST', 'OPTIONS']
-	}));
+	server.use(restify.CORS());
 
 	server.use(restify.acceptParser(server.acceptable));
 	server.use(restify.queryParser());
@@ -52,9 +54,9 @@ module.exports = (function () {
 		});
 	});
 
-	/*server.on('after', restify.auditLogger({
+	server.on('after', restify.auditLogger({
 		log: logger
-	}));*/
+	}));
 
 	API.init(server);
 
