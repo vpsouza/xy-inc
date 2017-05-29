@@ -1,0 +1,5 @@
+node_modules/
+.DS_Store
+xy-db-vol
+coverage
+npm-debug.log# Coverage reports\ncoverage\ncoverage/\ncoverage/*\n
