@@ -26,7 +26,7 @@ module.exports = (function () {
 	restify.CORS.ALLOW_HEADERS.push('x-requested-with');
 
 	server.use(restify.CORS({
-		origins: ['http://127.0.0.1', 'http://localhost', 'https://platform.easyapps.local', 'http://platform.easyapps.local'], // defaults to ['*']
+		origins: ['*'],
 		credentials: true, // defaults to false
 		headers: ['x-foo'], // sets expose-headers
 		methods: ['GET', 'PUT', 'DELETE', 'POST', 'OPTIONS']
