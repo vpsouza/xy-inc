@@ -6,13 +6,16 @@ const Endpoint = require('../../../models/endpoint');
 module.exports = (req,res,next) => {
     if(!req.body){
         let err = 'Invalid request data';
-        res.send(new restify.BadRequestError(err));
         return next(err);
     }
 
-    let error = new Endpoint(req.body).validateSync();
+    let bodyCloned = Object.assign({}, req.body);
+
+    if(!bodyCloned['_id']){
+        bodyCloned['_id'] = '592c7f26f0ffe42480bab9c9';
+    }
+    let error = new Endpoint(bodyCloned).validateSync();
     if(error){
-        res.send(new restify.BadRequestError(error.errors));
         return next(error.errors);
     }
 
