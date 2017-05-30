@@ -13,17 +13,9 @@ module.exports = (function () {
 		logger.error(err.message, {
 			event: 'uncaughtException'
 		});
-		res.send(500, {
+		/*res.send(500, {
 			handler: err
-		});
-	});
-
-	server.opts(/.*/, function (req,res,next) {
-		res.header("Access-Control-Allow-Origin", "*");
-		res.header("Access-Control-Allow-Methods", req.header("Access-Control-Request-Method"));
-		res.header("Access-Control-Allow-Headers", req.header("Access-Control-Request-Headers"));
-		res.send(200);
-		return next();
+		});*/
 	});
 
 	restify.CORS.ALLOW_HEADERS.push('accept');

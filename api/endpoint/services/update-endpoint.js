@@ -10,7 +10,7 @@ module.exports = (id,body) => new Promise((resolve, reject) => {
 
     Endpoint.update({ _id: id}, body, (err, raw) => {
         if(err) 
-            reject(err.errors.name.message);
+            reject(err);
         raw ? resolve(raw) : reject('record not found');
     })
 });

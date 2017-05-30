@@ -1,12 +1,8 @@
 version: '2'
 services:
     xy-db:
-        image: postgres:alpine
+        image: mvertes/alpine-mongo
         ports:
-            - "5432:5432"
+            - "27017:27017"
         volumes:
             - ./xy-db-vol:/var/lib/postgresql
-        environment:
-            - POSTGRES_USER=xy-inc
-            - POSTGRES_PASSWORD=xy-inc
-            - POSTGRES_DB=xyinc_dev
