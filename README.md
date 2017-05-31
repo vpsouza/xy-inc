@@ -12,7 +12,7 @@ A simple and useful backend application maded by nodejs, restify and mongodb to 
 
 ## Running the Backend app
 
-### Running the MongoDB with Docker Compose
+### `Running the MongoDB with Docker Compose`
 
 ```
 docker-compose up -d
