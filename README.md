@@ -1,77 +1,37 @@
 # XY-Inc Backend as a Service
 
-One Paragraph of project description goes here
+A simple and useful backend application maded by nodejs, restify and mongodb to provide ready to use endpoints with CRUD operations.
 
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
-See deployment for notes on how to deploy the project on a live system.
-
-### Prerequisities
+## Prerequisities
 
 1 - NodeJS: sudo apt-get install nodejs
-
 2 - npm: sudo apt-get install npm
+3 - MongoDB (you can choose to run it localy on your host or use our docker-compose yaml file)
+3.1 - Docker
+3.2 - Docker Compose
 
-3 - Docker
+## Running the Backend app
 
-
-See the installed versions:
-
-```
-node -v
-
-```
-
-```
-docker version
-
-Client:
- Version:      1.13.1
- API version:  1.26
- Go version:   go1.7.5
- Git commit:   092cba3
- Built:        Wed Feb  8 08:47:51 2017
- OS/Arch:      darwin/amd64
-
-Server:
- Version:      1.13.1
- API version:  1.26 (minimum version 1.12)
- Go version:   go1.7.5
- Git commit:   092cba3
- Built:        Wed Feb  8 08:47:51 2017
- OS/Arch:      linux/amd64
- Experimental: true
-```
-
-```
-docker-compose version
-
-docker-compose version 1.11.1, build 7c5d5e4
-docker-py version: 2.0.2
-CPython version: 2.7.12
-OpenSSL version: OpenSSL 1.0.2j  26 Sep 2016
-```
-
-### Installing
-
-A step by step series of examples that tell you have to get a development env running
-
-Install docker (Oficial website for docker)
-
-```
-   https://docs.docker.com/engine/installation/linux/ubuntu/
-```
-
-### Running the app
+### Running the MongoDB with Docker Compose
 
 ```
 docker-compose up -d
 ```
 
+### `npm install`
+
+Will install all dependencies needed by this application.<br>
+
+### `npm start`
+
+Runs the backend app in the development mode.<br>
+Check if everything is ok with this url: [http://localhost:3000/endpoints](http://localhost:3000/endpoints).
+
 ## Running the tests
 
-Explain how to run the automated tests for this system
+### `npm test`
+
+Launches the test runner in the interactive watch mode.
 
 ## Authors
 
