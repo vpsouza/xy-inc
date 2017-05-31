@@ -33,6 +33,10 @@ Check if everything is ok with this url: [http://localhost:3000/endpoints](http:
 
 Launches the test runner in the interactive watch mode.
 
+### `npm run coverage`
+
+Launches Instambul to check test coverage of the app.
+
 ## Authors
 
 * **Vinicius Piedade de Souza**
